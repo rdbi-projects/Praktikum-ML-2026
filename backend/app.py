@@ -22,9 +22,6 @@ def load_model():
     global tree_model
     
     # TODO load model
-    
-
-    return tree_model
 
 
 # Memuat model saat server pertama kali dijalankan
@@ -54,7 +51,6 @@ def predict():
 
     try:
         # TODO ambil data dari json
-        data = request.get_json(silent=True)
         
 
         # TODO ambil nilai fitur dari json
@@ -70,6 +66,7 @@ def predict():
 
         # TODO konversi nilai ke float
 
+        
         # memastikan tidak ada nilai fitur yang negatif
         if any(val < 0 for val in [SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm]):
             return jsonify({
@@ -78,7 +75,6 @@ def predict():
             }), 400
 
         
-
         # TODO pembuatan DataFrame dan pemanggilan model.predict()
         
 
